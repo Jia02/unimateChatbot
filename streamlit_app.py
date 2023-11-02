@@ -1,11 +1,12 @@
 # https://unimate-chatbot.streamlit.app/
+# github repo: https://github.com/Jia02/unimateChatbot 
 # python -m streamlit run streamlit_app.py
 # pip install -r requirements.txt
 
 import streamlit as st
 import re
 import torch
-#import nltk
+import nltk
 from streamlit_extras.colored_header import colored_header
 from streamlit_extras.add_vertical_space import add_vertical_space
 from nltk.tokenize import sent_tokenize
@@ -57,7 +58,8 @@ gpt_model, gpt_tokenizer = load_gpt_model(gpt_model_path)
 # Define remote directory to the Huggingface Space's dialo-GPT model
 dialogpt_model_name = "YJia/dialogpt-test"
 @st.cache_resource
-def load_dialogpt_model(path):  
+def load_dialogpt_model(path):
+    nltk.download('punkt')  
     dialogpt_model = AutoModelWithLMHead.from_pretrained(dialogpt_model_name)
     dialogpt_tokenizer = AutoTokenizer.from_pretrained('microsoft/DialoGPT-small', padding_side='left')
     return dialogpt_model, dialogpt_tokenizer
