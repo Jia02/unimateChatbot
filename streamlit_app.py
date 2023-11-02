@@ -158,6 +158,8 @@ with chat_container:
 
 # Generate a new response if last message is not from assistant
 if st.session_state.messages[-1]["role"] != "assistant":
+    response = None  # Initialize the response variable
+
     with st.chat_message("assistant"):
         with st.spinner("Generating a response..."):
             try:
@@ -174,10 +176,12 @@ if st.session_state.messages[-1]["role"] != "assistant":
                     response = dialogpt_response["generated_text"]
 
             except Exception as e:
-                    st.error(f"An error occurred during response generation: {str(e)}")
-                    # Update the chat history with the error message
-                    st.session_state.messages.append({"role": "assistant", "content": f"An error occurred: {str(e)}"})
+                st.error(f"An error occurred during response generation: {str(e)}")
+                # Update the chat history with the error message
+                st.session_state.messages.append({"role": "assistant", "content": f"An error occurred: {str(e)}"})
 
-            message = {"role": "assistant", "content": response}
-            st.session_state.messages.append(message) 
+    # Now you can use the response variable in the rest of your code
+    message = {"role": "assistant", "content": response}
+    st.session_state.messages.append(message)
+
 
