@@ -49,22 +49,22 @@ with st.sidebar:
 gpt_model_path = "YJia/gpt2-test" 
 @st.cache_resource
 def load_gpt_model(path):
-    gpt_model = GPT2LMHeadModel.from_pretrained(gpt_model_path)
-    gpt_tokenizer = GPT2Tokenizer.from_pretrained(gpt_model_path)
+    gpt_model = GPT2LMHeadModel.from_pretrained(path)
+    gpt_tokenizer = GPT2Tokenizer.from_pretrained(path)
     return gpt_model, gpt_tokenizer 
 
 gpt_model, gpt_tokenizer = load_gpt_model(gpt_model_path)
 
 # Define remote directory to the Huggingface Space's dialo-GPT model
-dialogpt_model_name = "YJia/dialogpt-test"
+dialogpt_model_path = "YJia/dialogpt-test"
 @st.cache_resource
 def load_dialogpt_model(path):
     nltk.download('punkt')  
-    dialogpt_model = AutoModelWithLMHead.from_pretrained(dialogpt_model_name)
+    dialogpt_model = AutoModelWithLMHead.from_pretrained(path)
     dialogpt_tokenizer = AutoTokenizer.from_pretrained('microsoft/DialoGPT-small', padding_side='left')
     return dialogpt_model, dialogpt_tokenizer
 
-dialogpt_model, dialogpt_tokenizer = load_dialogpt_model(dialogpt_model_name)
+dialogpt_model, dialogpt_tokenizer = load_dialogpt_model(dialogpt_model_path)
 
 # Define remote directory to the Huggingface Space's gptQA model
 gptQA_model_path = "YJia/gptQA-test"
