@@ -22,12 +22,12 @@ colored_header(label='', description='', color_name='blue-100')
 with st.sidebar:
     st.markdown('''                  
         ## About
-        This UniMate chatbot application aims to provide academic advising to the community of Sunway University / College, particularly knwoledgeable about the information regarding Student Handbook. 
+       The UniMate chatbot application aims to answer queries posed by the Sunway University/College community, particularly knwoledgeable about the information regarding Student Handbook. 
                             
         ## Specifications
         This chatbot is built using:
-        - Fine-tuned [GPT-2 model](https://huggingface.co/gpt2)
-        - Fine-tuned [microsoft/DialoGPT-small](https://huggingface.co/microsoft/DialoGPT-small)
+        - Fine-tuned [GPT-2 model](https://huggingface.co/YJia/gptQA-test)
+        - Fine-tuned [DialoGPT](https://huggingface.co/YJia/dialogpt-test)
         - Streamlit
         
         💡 Note: No API key required!
