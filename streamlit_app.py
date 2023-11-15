@@ -1,6 +1,4 @@
 import streamlit as st
-import re
-import torch
 import nltk
 from streamlit_extras.colored_header import colored_header
 from nltk.tokenize import sent_tokenize
