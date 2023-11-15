@@ -13,7 +13,7 @@ st.title('UniMate Chatbot 💬🤖')
 
 user_selected_model = st.selectbox(
     "Select a model",
-    ("GPT-2", "DialoGPT")
+    ("DialoGPT","GPT-2")
 )
 
 colored_header(label='', description='', color_name='blue-100')
