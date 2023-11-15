@@ -22,7 +22,7 @@ colored_header(label='', description='', color_name='blue-100')
 with st.sidebar:
     st.markdown('''                  
         ## About
-        This UniMate chatbot application aims to provide academic advising to the community of Sunway University / College , particularly knwoledgeable about the information regarding Student Handbook. 
+        This UniMate chatbot application aims to provide academic advising to the community of Sunway University / College, particularly knwoledgeable about the information regarding Student Handbook. 
                             
         ## Specifications
         This chatbot is built using:
