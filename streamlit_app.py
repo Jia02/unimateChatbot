@@ -106,7 +106,7 @@ def query(payload, maxLength, model, tokenizer):
 def gpt2QA_generate_response(prompt):
 
     if "~" not in prompt:
-        return "I don't understand what you are asking. Please ask a complete prompt with a question together with the attached context."
+        return "I don't understand what you are asking. Please ask a complete prompt that consits of your question along with the copied context. Refer to the Google Form's instruction if you did not understand."
 
     split_prompt = prompt.split("~")
     question = split_prompt[0].strip()
