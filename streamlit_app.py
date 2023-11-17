@@ -3,11 +3,12 @@
 
 import streamlit as st
 import nltk
+import random
 from streamlit_extras.colored_header import colored_header
 from nltk.tokenize import sent_tokenize
 from transformers import AutoModelWithLMHead, AutoTokenizer
 from transformers import pipeline
-import random
+from embeddings import find_context
 
 #======================Streamlit Application =================================
 
@@ -108,19 +109,14 @@ def query(payload, maxLength, model, tokenizer):
 # Function for generating LLM response from GPT-2 model
 def gpt2QA_generate_response(prompt):
 
-    if "~" not in prompt:
-        return "I don't understand what you are asking. Please ask a complete prompt that consits of your question along with the copied context. Refer to the Google Form's instruction if you did not understand."
+    context = find_context(prompt)
 
-    split_prompt = prompt.split("~")
-    question = split_prompt[0].strip()
-    context = split_prompt[1].strip()
-
-    result = gpt2QA_question_answerer(question=question, context=context)
+    result = gpt2QA_question_answerer(question=prompt, context=context)
 
     answers = []
     for example in result:
         answer = example['answer'].strip()
-        if (answer not in ["i", ".", "Add/Drop period.", "the Subject Add/Drop period.", "students"]):
+        if (answer not in ["i", ".", "Add/Drop period", "the Subject Add/Drop period.", "students"]):
             answers.append(answer)
             print(answers)
 
