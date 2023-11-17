@@ -1,3 +1,6 @@
+# python -m streamlit run streamlit_app.py
+# https://unimate-chatbot.streamlit.app/
+
 import streamlit as st
 import nltk
 from streamlit_extras.colored_header import colored_header
@@ -22,7 +25,7 @@ colored_header(label='', description='', color_name='blue-100')
 with st.sidebar:
     st.markdown('''                  
         ## About
-       The UniMate chatbot application aims to answer queries posed by the Sunway University/College community, particularly knwoledgeable about the information regarding Student Handbook. 
+       The UniMate chatbot application aims to answer queries posed by the Sunway University/College community, particularly knowlegeable about the information regarding Student Handbook. 
                             
         ## Specifications
         This chatbot is built using:
