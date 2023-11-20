@@ -67,7 +67,7 @@ def get_similar_docs(query, k=1, score=False):
             print(f"Waiting for {wait_time} seconds.")
             time.sleep(wait_time)
 
-            return "I don't understand what you are asking. Please ask a complete question."
+            return "I don't understand what you are asking. Please rephrase your prompt."
 
 # # Example usage
 # query = "How can students involve in a major cheating in examinations?"

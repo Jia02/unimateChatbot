@@ -111,8 +111,11 @@ def query(payload, maxLength, model, tokenizer):
 # Function for generating LLM response from GPT-2 model
 def gpt2QA_generate_response(prompt):
 
+    # Using local embeddings
     #context = find_context(prompt) #from using local embeddings.py 
-    context = get_similar_docs(prompt) #from using embeddings from Pinecone
+
+    # Using langchain's embeddings retrived from Pinecone vector database
+    context = get_similar_docs(prompt) 
 
     result = gpt2QA_question_answerer(question=prompt, context=context)
 
