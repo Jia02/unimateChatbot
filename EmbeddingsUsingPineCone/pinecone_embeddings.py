@@ -10,8 +10,11 @@ import streamlit as st
 
 # Assuming this script is located in the EmbeddingsUsingPineCone directory
 current_dir = os.path.dirname(__file__)
-# Move up one directory to reach the project root where .env is located
-dotenv_path = os.path.join(current_dir, '..', '.env')
+# Get the absolute path of the project root
+project_root = os.path.abspath(os.path.join(current_dir, '..'))
+
+# Join the absolute path with .env
+dotenv_path = os.path.join(project_root, '.env')
 
 st.title(dotenv_path)
 
