@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 import streamlit as st
 
 dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+st.title(dotenv_path)
 
 #Load the API keys from the .env file
 success = load_dotenv(dotenv_path)
