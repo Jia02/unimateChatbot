@@ -32,13 +32,13 @@ with st.sidebar:
                             
         ## Specifications
         This chatbot is built using:
-        - Fine-tuned [GPT-2 model](https://huggingface.co/YJia/gptQA-test)
-        - Fine-tuned [DialoGPT](https://huggingface.co/YJia/dialogpt-test)
+        - Fine-tuned [GPT-2 model](https://huggingface.co/gpt2)
+        - Fine-tuned [DialoGPT](https://huggingface.co/microsoft/DialoGPT-small)
         - Streamlit
         
         💡 Note: No API key required!
         
-        ### Connect with me ヽ( ´ ∀ `)ノ 
+        ### Connect with me ( ´ ∀ `)
     ''')
 
     #Configure the layout of the social media icons
