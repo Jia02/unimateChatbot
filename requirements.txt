@@ -6,3 +6,4 @@ torch
 nltk 
 openai
 langchain
+pinecone-client
