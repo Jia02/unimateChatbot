@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 import streamlit as st
 
 #Load the API keys from the .env file
-load_dotenv()
+load_dotenv(dotenv_path='/mount/src/unimatechatbot')
 
 # # Load the API keys from the config file
 # def load_config():
@@ -24,7 +24,7 @@ load_dotenv()
 # pinecone_api_key = config.get('pinecone_api_key')
 
 #Configure the openai's key
-#openai_api_key = os.getenv("openai_api_key")
+openai_api_key = os.getenv("openai_api_key")
 pinecone_api_key = os.getenv("pinecone_api_key")
 
 st.title(pinecone_api_key)
