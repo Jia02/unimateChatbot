@@ -40,7 +40,7 @@ embeddings = OpenAIEmbeddings(model="text-embedding-ada-002")
 
 # Fetch from the pinecone
 # initialize pinecone and fetch the data
-os.environ["OPENAI_API_KEY"] = pinecone_api_key
+os.environ["PINECONE_API_KEY"] = pinecone_api_key
 pinecone.init(
     api_key=pinecone_api_key,  # find at app.pinecone.io
     environment="us-west4-gcp-free"  # next to api key in console
