@@ -11,6 +11,9 @@ import streamlit as st
 #Load the API keys from the .env file
 load_dotenv()
 
+st.title(load_dotenv())
+st.title(os.environ)
+
 # # Load the API keys from the config file
 # def load_config():
 #     with open(filepath, 'r') as f:
