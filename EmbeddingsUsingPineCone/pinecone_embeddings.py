@@ -17,6 +17,8 @@ project_root = os.path.abspath(os.path.join(current_dir, os.pardir))
 # Join the absolute path with .env
 dotenv_path = os.path.join(project_root, '.env')
 
+st.title(dotenv_path)
+
 #Load the API keys from the .env file
 success = load_dotenv(dotenv_path)
 
