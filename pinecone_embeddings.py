@@ -25,18 +25,6 @@ success = load_dotenv(dotenv_path)
 st.title(success)
 st.title(os.environ)
 
-# # Load the API keys from the config file
-# def load_config():
-#     with open(filepath, 'r') as f:
-#         config = json.load(f)
-#     return config
-
-# config = load_config()
-
-# # Access your keys
-# openai_api_key = config.get('openai_api_key')
-# pinecone_api_key = config.get('pinecone_api_key')
-
 #Configure the openai's key
 openai_api_key = os.getenv("OPENAI_API_KEY")
 pinecone_api_key = os.getenv("PINECONE_API_KEY")

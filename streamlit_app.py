@@ -9,7 +9,7 @@ from nltk.tokenize import sent_tokenize
 from transformers import AutoModelWithLMHead, AutoTokenizer
 from transformers import pipeline
 from embeddings import find_context
-from EmbeddingsUsingPineCone.pinecone_embeddings import get_similar_docs
+from pinecone_embeddings import get_similar_docs
 
 
 #======================Streamlit Application =================================
