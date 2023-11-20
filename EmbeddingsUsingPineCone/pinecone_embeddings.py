@@ -25,11 +25,10 @@ load_dotenv()
 openai_api_key = os.getenv("openai_api_key")
 pinecone_api_key = os.getenv("pinecone_api_key")
 
-print(type(openai_api_key))
-print(type(pinecone_api_key))
+openaikey = openai_api_key
 
 # Configure the OpenAI's Ada model for embeddings
-os.environ["OPENAI_API_KEY"] = openai_api_key
+os.environ["OPENAI_API_KEY"] = openaikey
 embeddings = OpenAIEmbeddings(model="text-embedding-ada-002")
 
 # Fetch from the pinecone
