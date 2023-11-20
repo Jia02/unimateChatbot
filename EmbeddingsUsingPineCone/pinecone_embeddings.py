@@ -8,7 +8,11 @@ from dotenv import load_dotenv
 
 import streamlit as st
 
-dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+# Assuming this script is located in the EmbeddingsUsingPineCone directory
+current_dir = os.path.dirname(__file__)
+# Move up one directory to reach the project root where .env is located
+dotenv_path = os.path.join(current_dir, '..', '.env')
+
 st.title(dotenv_path)
 
 #Load the API keys from the .env file
