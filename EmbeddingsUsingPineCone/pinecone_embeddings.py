@@ -5,13 +5,13 @@ import time
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import Pinecone
 
-# Get the directory of the current script
-current_dir = os.path.dirname(os.path.abspath(__file__))
+# Path to the user's home directory
+home_dir = os.path.expanduser("~")
 
-# Construct the relative path to config.json
-filepath = os.path.join(current_dir, 'config.json')
+# Construct the path to the config file in the home directory
+filepath = os.path.join(home_dir, 'config.json')
 
-# load the api keys
+# Load the API keys from the config file
 def load_config():
     with open(filepath, 'r') as f:
         config = json.load(f)
@@ -19,9 +19,9 @@ def load_config():
 
 config = load_config()
 
-# Now you can access your keys like this:
-openai_api_key = config['openai_api_key']
-pinecone_api_key = config['pinecone_api_key'] 
+# Access your keys
+openai_api_key = config.get('openai_api_key')
+pinecone_api_key = config.get('pinecone_api_key')
 
 #Configure the openai's key
 os.environ["OPENAI_API_KEY"] = openai_api_key
