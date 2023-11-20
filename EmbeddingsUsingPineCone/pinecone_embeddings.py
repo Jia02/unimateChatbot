@@ -30,8 +30,8 @@ st.title(os.environ)
 openai_api_key = os.getenv("OPENAI_API_KEY")
 pinecone_api_key = os.getenv("PINECONE_API_KEY")
 
-st.title(openai_api_key)
-st.title(pinecone_api_key)
+# st.title(openai_api_key)
+# st.title(pinecone_api_key)
 
 # Configure the OpenAI's Ada model for embeddings
 os.environ["OPENAI_API_KEY"] = openai_api_key
