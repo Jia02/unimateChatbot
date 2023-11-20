@@ -35,8 +35,8 @@ import streamlit as st
 # st.title(pinecone_api_key)
 
 # Configure the OpenAI's Ada model for embeddings
-# os.environ["OPENAI_API_KEY"] = openai_api_key
-embeddings = OpenAIEmbeddings(model="text-embedding-ada-002")
+openai_api_key = os.environ["OPENAI_API_KEY"]
+embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key, model="text-embedding-ada-002")
 
 # Fetch from the pinecone
 # initialize pinecone and fetch the data
