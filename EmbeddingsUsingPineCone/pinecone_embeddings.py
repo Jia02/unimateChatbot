@@ -56,6 +56,7 @@ def get_similar_docs(query, k=1, score=False):
             # Extract the content between the first " and the next ",
             extracted_content = content[start_index:end_index]
 
+            print(f"\nExtracted content: {extracted_content}")
             return extracted_content
 
         except Exception as e:
