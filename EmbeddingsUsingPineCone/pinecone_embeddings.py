@@ -8,10 +8,11 @@ from dotenv import load_dotenv
 
 import streamlit as st
 
+dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
 #Load the API keys from the .env file
-load_dotenv()
+success = load_dotenv(dotenv_path)
 
-st.title(load_dotenv())
+st.title(success)
 st.title(os.environ)
 
 # # Load the API keys from the config file
@@ -30,8 +31,8 @@ st.title(os.environ)
 openai_api_key = os.getenv("OPENAI_API_KEY")
 pinecone_api_key = os.getenv("PINECONE_API_KEY")
 
-# st.title(openai_api_key)
-# st.title(pinecone_api_key)
+st.title(openai_api_key)
+st.title(pinecone_api_key)
 
 # Configure the OpenAI's Ada model for embeddings
 os.environ["OPENAI_API_KEY"] = openai_api_key
