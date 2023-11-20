@@ -4,27 +4,28 @@ import pinecone
 import time
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import Pinecone
+from dotenv import load_dotenv
 
-# Path to the user's home directory
-home_dir = os.path.expanduser("~")
+#Load the API keys from the .env file
+load_dotenv()
 
-# Construct the path to the config file in the home directory
-filepath = os.path.join(home_dir, 'config.json')
+# # Load the API keys from the config file
+# def load_config():
+#     with open(filepath, 'r') as f:
+#         config = json.load(f)
+#     return config
 
-# Load the API keys from the config file
-def load_config():
-    with open(filepath, 'r') as f:
-        config = json.load(f)
-    return config
+# config = load_config()
 
-config = load_config()
-
-# Access your keys
-openai_api_key = config.get('openai_api_key')
-pinecone_api_key = config.get('pinecone_api_key')
+# # Access your keys
+# openai_api_key = config.get('openai_api_key')
+# pinecone_api_key = config.get('pinecone_api_key')
 
 #Configure the openai's key
-os.environ["OPENAI_API_KEY"] = openai_api_key
+openai_api_key = os.getenv("openai_api_key")
+pinecone_api_key = os.getenv("pinecone_api_key")
+
+# Configure the OpenAI's Ada model for embeddings
 embeddings = OpenAIEmbeddings(model="text-embedding-ada-002")
 
 # Fetch from the pinecone
