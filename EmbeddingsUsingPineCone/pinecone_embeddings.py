@@ -8,6 +8,9 @@ from dotenv import load_dotenv
 
 import streamlit as st
 
+# Print current working directory
+st.title(f"Current Working Directory: {os.getcwd()}")
+
 # Assuming this script is located in the EmbeddingsUsingPineCone directory
 current_dir = os.path.dirname(__file__)
 
@@ -17,18 +20,11 @@ project_root = os.path.abspath(os.path.join(current_dir, os.pardir))
 # Join the absolute path with .env
 dotenv_path = os.path.join(project_root, '.env')
 
-st.title(dotenv_path)
-
-#Load the API keys from the .env file
-success = load_dotenv(dotenv_path)
-
-st.title(success) #false
-
-# Print current working directory
-st.title(f"Current Working Directory: {os.getcwd()}")
-
 # Print whether .env file exists
 st.title(f".env File Exists: {os.path.exists(dotenv_path)}")
+
+#Load the API keys from the .env file
+load_dotenv(dotenv_path)
 
 
 #Configure the openai's key
@@ -44,6 +40,7 @@ embeddings = OpenAIEmbeddings(model="text-embedding-ada-002")
 
 # Fetch from the pinecone
 # initialize pinecone and fetch the data
+os.environ["OPENAI_API_KEY"] = pinecone_api_key
 pinecone.init(
     api_key=pinecone_api_key,  # find at app.pinecone.io
     environment="us-west4-gcp-free"  # next to api key in console
