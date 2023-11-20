@@ -9,7 +9,7 @@ from langchain.vectorstores import Pinecone
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Construct the relative path to config.json
-filepath = os.path.join(current_dir, 'EmbeddingsUsingPineCone','config.json')
+filepath = os.path.join(current_dir, 'config.json')
 
 # load the api keys
 def load_config():
