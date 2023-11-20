@@ -8,39 +8,40 @@ from dotenv import load_dotenv
 
 import streamlit as st
 
-# Print current working directory
-st.title(f"Current Working Directory: {os.getcwd()}")
+# # Print current working directory
+# st.title(f"Current Working Directory: {os.getcwd()}")
 
-# Assuming this script is located in the EmbeddingsUsingPineCone directory
-current_dir = os.path.dirname(__file__)
+# # Assuming this script is located in the EmbeddingsUsingPineCone directory
+# current_dir = os.path.dirname(__file__)
 
-# Get the absolute path of the project root by navigating up one directory
-project_root = os.path.abspath(os.path.join(current_dir, os.pardir))
+# # Get the absolute path of the project root by navigating up one directory
+# project_root = os.path.abspath(os.path.join(current_dir, os.pardir))
 
-# Join the absolute path with .env
-dotenv_path = os.path.join(project_root, '.env')
+# # Join the absolute path with .env
+# dotenv_path = os.path.join(project_root, '.env')
 
-# Print whether .env file exists
-st.title(f".env File Exists: {os.path.exists(dotenv_path)}")
+# # Print whether .env file exists
+# st.title(f".env File Exists: {os.path.exists(dotenv_path)}")
 
-#Load the API keys from the .env file
-load_dotenv(dotenv_path)
+# #Load the API keys from the .env file
+# load_dotenv(dotenv_path)
 
 
-#Configure the openai's key
-openai_api_key = os.getenv("OPENAI_API_KEY")
-pinecone_api_key = os.getenv("PINECONE_API_KEY")
+# #Configure the openai's key
+# openai_api_key = os.getenv("OPENAI_API_KEY")
+# pinecone_api_key = os.getenv("PINECONE_API_KEY")
 
-st.title(openai_api_key)
-st.title(pinecone_api_key)
+# st.title(openai_api_key)
+# st.title(pinecone_api_key)
 
 # Configure the OpenAI's Ada model for embeddings
-os.environ["OPENAI_API_KEY"] = openai_api_key
+# os.environ["OPENAI_API_KEY"] = openai_api_key
 embeddings = OpenAIEmbeddings(model="text-embedding-ada-002")
 
 # Fetch from the pinecone
 # initialize pinecone and fetch the data
-os.environ["PINECONE_API_KEY"] = pinecone_api_key
+# os.environ["PINECONE_API_KEY"] = pinecone_api_key
+pinecone_api_key = os.environ["PINECONE_API_KEY"]  
 pinecone.init(
     api_key=pinecone_api_key,  # find at app.pinecone.io
     environment="us-west4-gcp-free"  # next to api key in console
