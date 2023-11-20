@@ -25,13 +25,13 @@ load_dotenv()
 openai_api_key = os.getenv("openai_api_key")
 pinecone_api_key = os.getenv("pinecone_api_key")
 
-if openai_api_key is None:
-    print("Error: OPENAI_API_KEY is not set.")
-    print("Please set the environment variable OPENAI_API_KEY before running this script.")
-    exit(1)  # This will exit the script with a non-zero status code indicating an error.
-else:
-    print(type(openai_api_key))
-    print(type(pinecone_api_key))
+# if openai_api_key is None:
+#     print("Error: OPENAI_API_KEY is not set.")
+#     print("Please set the environment variable OPENAI_API_KEY before running this script.")
+#     exit(1)  # This will exit the script with a non-zero status code indicating an error.
+# else:
+#     print(type(openai_api_key))
+#     print(type(pinecone_api_key))
 
 # Configure the OpenAI's Ada model for embeddings
 os.environ["OPENAI_API_KEY"] = openai_api_key
