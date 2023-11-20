@@ -22,8 +22,14 @@ st.title(dotenv_path)
 #Load the API keys from the .env file
 success = load_dotenv(dotenv_path)
 
-st.title(success)
-st.title(os.environ)
+st.title(success) #false
+
+# Print current working directory
+st.title(f"Current Working Directory: {os.getcwd()}")
+
+# Print whether .env file exists
+st.title(f".env File Exists: {os.path.exists(dotenv_path)}")
+
 
 #Configure the openai's key
 openai_api_key = os.getenv("OPENAI_API_KEY")
