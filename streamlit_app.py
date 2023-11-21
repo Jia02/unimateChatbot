@@ -112,10 +112,10 @@ def query(payload, maxLength, model, tokenizer):
 def gpt2QA_generate_response(prompt):
 
     # Option 1: Using local embeddings
-    #context = find_context(prompt)
+    context = find_context(prompt)
 
     # Option 2: Using langchain's embeddings method to retrieved documetns from Pinecone vector database
-    context = get_similar_docs(prompt) 
+    #context = get_similar_docs(prompt) 
 
     result = gpt2QA_question_answerer(question=prompt, context=context)
 
