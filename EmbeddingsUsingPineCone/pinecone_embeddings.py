@@ -15,18 +15,18 @@ os.environ["PINECONE_API_KEY"] = pinecone_api_key
 # Configure the OpenAI's Ada model for embeddings
 embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key, model="text-embedding-ada-002")
 
-# Fetch from the pinecone
-# initialize pinecone and fetch the data
+# Fetch from the Pinecone
+# initialize Pinecone and fetch the data
 pinecone.init(
     api_key=pinecone_api_key,  # find at app.pinecone.io
     environment="us-west4-gcp-free"  # next to api key in console
 )
 index_name = "cp1-test2"
 
-# Load the PineCone vector database
+# Load the Pinecone vector database
 docsearch = Pinecone.from_existing_index(index_name, embeddings)
 
-# Define a function to retrieve similar documents or contexts from PineCone vector database
+# Define a function to retrieve similar documents or contexts from Pinecone vector database
 def get_similar_docs(query, k=1, score=False):
     while True:
         try:
