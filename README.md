@@ -18,7 +18,7 @@ This chatbot aids the community of Sunway University / College in answering quer
     3. Choose a model, then enter your prompt and observe the response generated. 
 
 ## Remark 
-- Create a file named **secrets.toml** to add the secret keys for OpenAI's API key and Pinecone API key as 
+- Create folder named **.streamlit** at the root with a file named **secrets.toml** to add the secret keys for OpenAI's API key and Pinecone API key as 
     ```
     OPENAI_API_KEY = "your-openai-api-key"
     PINECONE_API_KEY = "your-pinecone-api-key"
