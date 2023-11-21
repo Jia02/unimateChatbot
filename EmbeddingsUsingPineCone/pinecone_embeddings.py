@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 
 import streamlit as st
 
-st.title(os.environ)
+#st.title(os.environ)
 
 # # Print current working directory
 # st.title(f"Current Working Directory: {os.getcwd()}")
