@@ -10,9 +10,10 @@ import streamlit as st
 
 st.title(os.environ)
 
-# # # Print current working directory
-# # st.title(f"Current Working Directory: {os.getcwd()}")
+# # Print current working directory
+# st.title(f"Current Working Directory: {os.getcwd()}")
 
+#=======================To run locally =================================
 # # Assuming this script is located in the EmbeddingsUsingPineCone directory
 # current_dir = os.path.dirname(__file__)
 
@@ -35,8 +36,12 @@ st.title(os.environ)
 # st.title(openai_api_key)
 # st.title(pinecone_api_key)
 
+#=======================To run on Streamlit Cloud =================================
 openai_api_key = st.secrets["OPENAI_API_KEY"]
 pinecone_api_key = st.secrets["PINECONE_API_KEY"]
+
+os.environ["OPENAI_API_KEY"] = openai_api_key
+os.environ["PINECONE_API_KEY"] = pinecone_api_key
 
 # Configure the OpenAI's Ada model for embeddings
 embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key, model="text-embedding-ada-002")
