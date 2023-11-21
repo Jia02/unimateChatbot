@@ -17,5 +17,14 @@ This chatbot aids the community of Sunway University / College in answering quer
     2. Wait for the UniMate chatbot's dependencies to load properly. 
     3. Choose a model, then enter your prompt and observe the response generated. 
 
+## Remark 
+- Create a file named **secrets.toml** to add the secret keys for OpenAI's API key and Pinecone API key as 
+    ```
+    OPENAI_API_KEY = "your-openai-api-key"
+    PINECONE_API_KEY = "your-pinecone-api-key"
+    ```
+- Remember to add your secret keys to the application running on Streamlit Cloud. 
+- Refer to the [documentation](https://docs.streamlit.io/streamlit-community-cloud/deploy-your-app/secrets-management) for more information. 
+
 ## Screenshot of UniMate
 ![A sceenhshoot of the UniMate Chatbot](./assets/unimate-interface.png)
