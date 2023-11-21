@@ -40,16 +40,8 @@ import streamlit as st
 openai_api_key = st.secrets["OPENAI_API_KEY"]
 pinecone_api_key = st.secrets["PINECONE_API_KEY"]
 
-if openai_api_key is None:
-    st.warning("The API key is not set.")
-else:
-    if isinstance(openai_api_key, str):
-        st.success("The API key is a valid string.")
-    else:
-        st.error("The API key is not a valid string.")
-
-os.environ["OPENAI_API_KEY"] = openai_api_key
-os.environ["PINECONE_API_KEY"] = pinecone_api_key
+# os.environ["OPENAI_API_KEY"] = openai_api_key
+# os.environ["PINECONE_API_KEY"] = pinecone_api_key
 
 # Configure the OpenAI's Ada model for embeddings
 embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key, model="text-embedding-ada-002")
