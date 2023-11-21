@@ -122,11 +122,11 @@ def gpt2QA_generate_response(prompt):
     answers = []
     for example in result:
         answer = example['answer'].strip()
-        if (answer not in ["i", ".", "Add/Drop period", "the Subject Add/Drop period.", "students"]):
+        if (answer not in ["i", ".", "Add/Drop period", "the Subject Add/Drop period.", "students", "calender"]):
             answers.append(answer)
             print(answers)
 
-    # Choose a random answer from the list
+    # Choose a random answer from the listS
     selected_answer = random.choice(answers)
 
     return selected_answer
