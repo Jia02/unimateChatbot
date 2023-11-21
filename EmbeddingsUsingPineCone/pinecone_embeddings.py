@@ -1,42 +1,11 @@
-import json
 import os
 import pinecone
 import time
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import Pinecone
-from dotenv import load_dotenv
-
 import streamlit as st
 
-#st.title(os.environ)
-
-# # Print current working directory
-# st.title(f"Current Working Directory: {os.getcwd()}")
-
-#=======================To run locally =================================
-# # Assuming this script is located in the EmbeddingsUsingPineCone directory
-# current_dir = os.path.dirname(__file__)
-
-# # Get the absolute path of the project root by navigating up one directory
-# project_root = os.path.abspath(os.path.join(current_dir, os.pardir))
-
-# # Join the absolute path with .env
-# dotenv_path = os.path.join(project_root, '.env')   
-
-# # Print whether .env file exists
-# st.title(f".env File Exists: {os.path.exists(dotenv_path)}")
-
-# #Load the API keys from the .env file
-# load_dotenv(dotenv_path)
-
-# #Configure the openai's key
-# openai_api_key = os.getenv("OPENAI_API_KEY")
-# pinecone_api_key = os.getenv("PINECONE_API_KEY")
-
-# st.title(openai_api_key)
-# st.title(pinecone_api_key)
-
-#=======================To run on Streamlit Cloud =================================
+#=======================To access the API Keys set on streamlit cloud =================================
 openai_api_key = st.secrets["OPENAI_API_KEY"]
 pinecone_api_key = st.secrets["PINECONE_API_KEY"]
 
@@ -54,9 +23,10 @@ pinecone.init(
 )
 index_name = "cp1-test2"
 
-#load the vector db
+# Load the PineCone vector database
 docsearch = Pinecone.from_existing_index(index_name, embeddings)
 
+# Define a function to retrieve similar documents or contexts from PineCone vector database
 def get_similar_docs(query, k=1, score=False):
     while True:
         try:
