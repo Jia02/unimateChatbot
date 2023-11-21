@@ -40,8 +40,8 @@ import streamlit as st
 openai_api_key = st.secrets["OPENAI_API_KEY"]
 pinecone_api_key = st.secrets["PINECONE_API_KEY"]
 
-# os.environ["OPENAI_API_KEY"] = openai_api_key
-# os.environ["PINECONE_API_KEY"] = pinecone_api_key
+os.environ["OPENAI_API_KEY"] = openai_api_key
+os.environ["PINECONE_API_KEY"] = pinecone_api_key
 
 # Configure the OpenAI's Ada model for embeddings
 embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key, model="text-embedding-ada-002")
