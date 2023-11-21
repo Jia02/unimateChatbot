@@ -28,15 +28,17 @@ st.title(os.environ)
 # #Load the API keys from the .env file
 # load_dotenv(dotenv_path)
 
-#Configure the openai's key
-openai_api_key = os.getenv("OPENAI_API_KEY")
-pinecone_api_key = os.getenv("PINECONE_API_KEY")
+# #Configure the openai's key
+# openai_api_key = os.getenv("OPENAI_API_KEY")
+# pinecone_api_key = os.getenv("PINECONE_API_KEY")
 
-st.title(openai_api_key)
-st.title(pinecone_api_key)
+# st.title(openai_api_key)
+# st.title(pinecone_api_key)
+
+openai_api_key = st.secrets["OPENAI_API_KEY"]
+pinecone_api_key = st.secrets["PINECONE_API_KEY"]
 
 # Configure the OpenAI's Ada model for embeddings
-openai_api_key = os.environ["OPENAI_API_KEY"] 
 embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key, model="text-embedding-ada-002")
 
 # Fetch from the pinecone
