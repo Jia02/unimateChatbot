@@ -81,6 +81,7 @@ def get_similar_docs(query, k=1, score=False):
         except Exception as e:
             # Handle Pinecone API exceptions
             print(f"Pinecone API exception: {e}")
+            st.error(f"Pinecone API exception: {e}")
 
             # Optionally, wait and retry
             wait_time = 5  # Adjust the wait time as needed
