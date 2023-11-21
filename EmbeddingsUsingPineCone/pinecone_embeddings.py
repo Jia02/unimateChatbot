@@ -40,6 +40,8 @@ import streamlit as st
 openai_api_key = st.secrets["OPENAI_API_KEY"]
 pinecone_api_key = st.secrets["PINECONE_API_KEY"]
 
+st.title(pinecone_api_key)
+
 os.environ["OPENAI_API_KEY"] = openai_api_key
 os.environ["PINECONE_API_KEY"] = pinecone_api_key
 
