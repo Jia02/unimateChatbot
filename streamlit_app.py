@@ -149,11 +149,19 @@ for message in st.session_state.messages:
 chat_container = st.container()
 
 # User-provided prompt
-with chat_container:
-    if prompt := st.chat_input("Enter your question here"):
-        st.session_state.messages.append({"role": "user", "content": prompt})
+# with chat_container:
+#     if prompt := st.chat_input("Enter your question here"):
+#         st.session_state.messages.append({"role": "user", "content": prompt})
+#         with st.chat_message("user"):
+#             st.write(prompt)
+
+# User-provided prompt
+if prompt := st.chat_input("Enter your question here"):
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    with st.container():
         with st.chat_message("user"):
             st.write(prompt)
+
 
 # Generate a new response if last message is not from assistant
 if st.session_state.messages[-1]["role"] != "assistant":
